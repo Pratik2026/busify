@@ -18,5 +18,11 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'no-console': 'warn',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ]
   },
 };

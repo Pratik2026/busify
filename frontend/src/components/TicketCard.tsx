@@ -148,7 +148,7 @@ const SchedulesByPassengerEmail: React.FC<SchedulesByPassengerEmailProps> = ({
         );
         filterTickets(response.data);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
     fetchSchedules();

@@ -1,17 +1,10 @@
-import React from 'react';
-import {
-  Container,
-  Typography,
-  ThemeProvider,
-  Box,
-} from '@mui/material';
+import {Container, Typography, ThemeProvider, Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import aboutUsImage from '../../assets/about-us.png';
 import ourMissionImage from '../../assets/our-mission.jpg';
 import ourStoryImage from '../../assets/our-story.jpg';
-
 
 const AboutUs = () => {
   const theme = useTheme();
@@ -24,7 +17,7 @@ const AboutUs = () => {
       marginBottom: '2rem',
     },
   };
-  
+
   return (
     <ThemeProvider theme={theme}>
       <Box bgcolor="#ffffff" pb="4rem" mt="3rem">

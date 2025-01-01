@@ -1,5 +1,4 @@
-import React from 'react';
-import {Container, Typography, Box, Link} from '@mui/material';
+import {Container, Typography, Box} from '@mui/material';
 import TermsAndPolicy_1 from '../../assets/termsAndPolicy_1.avif';
 import TermsAndPolicy_2 from '../../assets/termsAndPolicy_2.avif';
 import TermsAndPolicy_3 from '../../assets/termsAndPolicy_3.jpg';
