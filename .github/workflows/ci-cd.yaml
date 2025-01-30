@@ -29,13 +29,12 @@ jobs:
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest5
 
-      - name: Azure Login using Managed Identity
+      - name: Azure Login with User-Assigned Managed Identity
         uses: azure/login@v1
         with:
-          identity-type: user-assigned
-          client-id: ${{ secrets.AZURE_UAMI_CLIENT_ID }}
-          resource-group: busify-resource
-          
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
       - name: Deploy to Azure Container App
         run: |
           az containerapp update \
