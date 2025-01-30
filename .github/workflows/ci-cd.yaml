@@ -24,21 +24,21 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest ./backend
+        run: docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest5 ./backend
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest
+        run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest5
 
-      - name: Azure Login
+      - name: Azure Login using Managed Identity
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
+          identity-type: user-assigned
+          client-id: ${{ secrets.AZURE_UAMI_CLIENT_ID }}
+          resource-group: busify-resource
+          
       - name: Deploy to Azure Container App
         run: |
           az containerapp update \
             --name busify \
             --resource-group busify-resource \
-            --image ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest
+            --image ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest5
