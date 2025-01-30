@@ -30,10 +30,12 @@ jobs:
         run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/busify:latest5
 
       - name: Azure Login with User-Assigned Managed Identity
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          auth-type: IDENTITY
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
 
       - name: Deploy to Azure Container App
         run: |
