@@ -78,8 +78,8 @@ const demoData = {
   users: [
     {
       id: 'user1',
-      email: '23bcs200@iiitdmj.ac.in',
-      name: 'Aditya Verma',
+      email: '22bcs195@iiitdmj.ac.in',
+      name: 'Pratik Solanki',
       picture: 'https://example.com/user1.jpg',
       role: 'admin',
       createdAt: new Date(),
