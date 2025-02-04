@@ -8,7 +8,7 @@ echo "Running Prisma generate..."
 npx prisma generate
 
 echo "Running database migrations..."
-npm run migrate:dev
+npx prisma migrate deploy
 
 echo "Seeding database..."
 npm run seed
