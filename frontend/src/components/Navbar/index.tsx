@@ -131,7 +131,7 @@ export default function Navbar() {
             color={theme.palette.text.primary}
             fontSize={{xs: '1.5rem', md: '2.5rem'}}
           >
-            Manage Buses
+            <LinkContainer to="/admin/dashboard">Manage Buses</LinkContainer>
           </Typography>
           <Typography
             paddingTop={{sm: 0, md: 2}}
@@ -250,7 +250,9 @@ export default function Navbar() {
           currentScreen === 'lg' || currentScreen === 'xl' ? (
             <ManageButton>
               <Typography variant="h6" color={theme.palette.common.black}>
-                Manage Buses
+                <LinkContainer to="/admin/dashboard">
+                  Manage Buses
+                </LinkContainer>
               </Typography>
             </ManageButton>
           ) : (
